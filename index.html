@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Basics Cheat Sheet</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    .custom-margin {
+        margin-top: 100px;
+    }
+    /* Loading Screen Styling */
+    #loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #f0f8ff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+    }
+    .loading-gif {
+        width: 250px;
+        height: 250px;
+        object-fit: cover;
+    }
+    .loading-text {
+        font-size: 24px;
+        color: #555;
+        margin-top: 20px;
+        animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+        0% { opacity: 0.3; }
+        50% { opacity: 1; }
+        100% { opacity: 0.3; }
+    }
+    #main-content {
+        animation: fadeIn 1s ease-in;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    code {
+        background-color: #f8f9fa;
+        padding: 2px 4px;
+        border-radius: 3px;
+        font-family: monospace;
+        color: #e74c3c;
+    }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <img src="https://i.pinimg.com/originals/08/cc/96/08cc961c1ded28ea324430f570c4c3cf.gif" alt="Loading Animation" class="loading-gif">
+        <h3 class="loading-text">Loading...</h3>
+    </div>
+
+    <div class="container my-5" id="main-content">
+        <h1 class="text-primary fw-bold"># <span class="text-muted">[</span> GIT <span class="text-dark">BASICS</span> <span class="text-muted">]</span> <span class="text-warning">(CheatSheet)</span></h1>
+        <H2>By: Your Name</H2>
+        
+        <section class="mt-4">
+            <h4 class="text-secondary fw-bold">1. Repository Operations</h4>
+            <ul class="list-unstyled">
+                <li><strong>Initialize a repository:</strong> <code>git init</code></li>
+                <li><strong>Clone a repository:</strong> <code>git clone &lt;repository_url&gt;</code></li>
+                <li><strong>Check repository status:</strong> <code>git status</code></li>
+                <li><strong>List all remotes:</strong> <code>git remote -v</code></li>
+                <li><strong>Add a remote:</strong> <code>git remote add &lt;name&gt; &lt;url&gt;</code></li>
+            </ul>
+        </section>
+
+        <section class="mt-4">
+            <h4 class="text-secondary fw-bold">2. Branch Operations</h4>
+            <ul class="list-unstyled">
+                <li><strong>Create a branch:</strong> <code>git branch &lt;branch_name&gt;</code></li>
+                <li><strong>Switch to a branch:</strong> <code>git checkout &lt;branch_name&gt;</code></li>
+                <li><strong>Create and switch to branch:</strong> <code>git checkout -b &lt;branch_name&gt;</code></li>
+                <li><strong>List all branches:</strong> <code>git branch -a</code></li>
+                <li><strong>Delete a branch:</strong> <code>git branch -d &lt;branch_name&gt;</code></li>
+                <li><strong>Merge a branch:</strong> <code>git merge &lt;branch_name&gt;</code></li>
+                <li><strong>Rebase current branch:</strong> <code>git rebase &lt;branch_name&gt;</code></li>
+            </ul>
+        </section>
+
+        <section class="mt-4">
+            <h4 class="text-secondary fw-bold">3. Commit Operations</h4>
+            <ul class="list-unstyled">
+                <li><strong>Stage changes:</strong> <code>git add &lt;file&gt;</code> or <code>git add .</code></li>
+                <li><strong>Commit changes:</strong> <code>git commit -m "commit message"</code></li>
+                <li><strong>Amend last commit:</strong> <code>git commit --amend</code></li>
+                <li><strong>View commit history:</strong> <code>git log</code></li>
+                <li><strong>View specific commit:</strong> <code>git show &lt;commit_hash&gt;</code></li>
+                <li><strong>Reset to previous commit:</strong> <code>git reset &lt;commit_hash&gt;</code></li>
+            </ul>
+        </section>
+
+        <section class="mt-4">
+            <h4 class="text-secondary fw-bold">4. Remote Operations</h4>
+            <ul class="list-unstyled">
+                <li><strong>Push to remote:</strong> <code>git push &lt;remote&gt; &lt;branch&gt;</code></li>
+                <li><strong>Pull from remote:</strong> <code>git pull &lt;remote&gt; &lt;branch&gt;</code></li>
+                <li><strong>Fetch from remote:</strong> <code>git fetch &lt;remote&gt;</code></li>
+                <li><strong>View remote branches:</strong> <code>git branch -r</code></li>
+                <li><strong>Track remote branch:</strong> <code>git branch --track &lt;branch&gt; &lt;remote&gt;/&lt;branch&gt;</code></li>
+            </ul>
+        </section>
+
+        <section class="mt-4">
+            <h4 class="text-secondary fw-bold">5. Stash Operations</h4>
+            <ul class="list-unstyled">
+                <li><strong>Stash changes:</strong> <code>git stash</code></li>
+                <li><strong>List stashes:</strong> <code>git stash list</code></li>
+                <li><strong>Apply stash:</strong> <code>git stash apply</code></li>
+                <li><strong>Drop stash:</strong> <code>git stash drop</code></li>
+                <li><strong>Clear all stashes:</strong> <code>git stash clear</code></li>
+            </ul>
+        </section>
+
+        <section class="mt-4">
+            <h4 class="text-secondary fw-bold">6. Tag Operations</h4>
+            <ul class="list-unstyled">
+                <li><strong>Create a tag:</strong> <code>git tag &lt;tag_name&gt;</code></li>
+                <li><strong>Create annotated tag:</strong> <code>git tag -a &lt;tag_name&gt; -m "message"</code></li>
+                <li><strong>List tags:</strong> <code>git tag</code></li>
+                <li><strong>Push tags to remote:</strong> <code>git push --tags</code></li>
+                <li><strong>Delete tag:</strong> <code>git tag -d &lt;tag_name&gt;</code></li>
+            </ul>
+        </section>
+
+        <section class="mt-4">
+            <h4 class="text-secondary fw-bold">7. Configuration</h4>
+            <ul class="list-unstyled">
+                <li><strong>Set global username:</strong> <code>git config --global user.name "Your Name"</code></li>
+                <li><strong>Set global email:</strong> <code>git config --global user.email "your@email.com"</code></li>
+                <li><strong>View configuration:</strong> <code>git config --list</code></li>
+                <li><strong>Set default editor:</strong> <code>git config --global core.editor "code --wait"</code></li>
+            </ul>
+        </section>
+
+        <section class="mt-4">
+            <h4 class="text-secondary fw-bold">8. Advanced Operations</h4>
+            <ul class="list-unstyled">
+                <li><strong>Cherry-pick a commit:</strong> <code>git cherry-pick &lt;commit_hash&gt;</code></li>
+                <li><strong>Interactive rebase:</strong> <code>git rebase -i &lt;commit_hash&gt;</code></li>
+                <li><strong>Search in code:</strong> <code>git grep "search_term"</code></li>
+                <li><strong>Show file history:</strong> <code>git log -p &lt;file_path&gt;</code></li>
+                <li><strong>Create a patch:</strong> <code>git format-patch &lt;commit_hash&gt;</code></li>
+            </ul>
+        </section>
+
+        <section class="mt-4">
+            <h4 class="text-secondary fw-bold">9. Undoing Changes</h4>
+            <ul class="list-unstyled">
+                <li><strong>Unstage a file:</strong> <code>git reset HEAD &lt;file&gt;</code></li>
+                <li><strong>Discard local changes:</strong> <code>git checkout -- &lt;file&gt;</code></li>
+                <li><strong>Revert a commit:</strong> <code>git revert &lt;commit_hash&gt;</code></li>
+                <li><strong>Reset to remote:</strong> <code>git fetch origin && git reset --hard origin/&lt;branch&gt;</code></li>
+            </ul>
+        </section>
+
+        <section class="mt-4">
+            <h4 class="text-secondary fw-bold">10. Submodules</h4>
+            <ul class="list-unstyled">
+                <li><strong>Add a submodule:</strong> <code>git submodule add &lt;repository_url&gt; &lt;path&gt;</code></li>
+                <li><strong>Initialize submodules:</strong> <code>git submodule init</code></li>
+                <li><strong>Update submodules:</strong> <code>git submodule update</code></li>
+                <li><strong>Clone with submodules:</strong> <code>git clone --recurse-submodules &lt;repository_url&gt;</code></li>
+            </ul>
+        </section>
+
+        <section class="custom-margin"></section>
+        
+        <footer class="text-end fixed-bottom bg-secondary text-white p-2 border-top">
+            <p class="mb-0">By: <strong>Your Name</strong></p>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                const loadingScreen = document.getElementById('loading-screen');
+                const mainContent = document.getElementById('main-content');
+                
+                loadingScreen.style.display = 'none';
+                mainContent.style.display = 'block';
+            }, 5000); // 5 seconds
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

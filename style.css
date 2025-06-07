@@ -1,0 +1,27 @@
+body {
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h4 {
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 5px;
+}
+
+ul li {
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+footer {
+    background-color: #f8f9fa; /* Light background */
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
